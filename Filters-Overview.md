@@ -25,13 +25,14 @@ filters defined in your `filters.json` configuration file.
 
 A `filters.json` file is composed of a single JSON object with five
 different subsections. Each section defines different settings for each
-different type of event. A list of parameters available for each type of 
+different type of event. A list of parameters available for each type of
 filter can be found on the following pages:
 * [Monsters](Monster-Filters)
 * [Stops](Stop-Filters)
 * [Gyms](Gym-Filters)
 * [Eggs](Egg-Filters)
-* [Raids](Raid-Filters) 
+* [Raids](Raid-Filters)
+
 The basic structure of `filters.json` is as follows:
 
 ```json
@@ -39,7 +40,7 @@ The basic structure of `filters.json` is as follows:
     "monsters":{
         "enabled": false,
         "defaults": { },
-        "filters": { },
+        "filters": { }
     },
     "stops":{
         "enabled": false,
@@ -51,13 +52,11 @@ The basic structure of `filters.json` is as follows:
         "ignore_neutral": false,
         "defaults": { },
         "filters": { }
-        }
     },
     "eggs":{
         "enabled": false,
         "defaults": { },
         "filters": { }
-        }
     },
     "raids":{
         "enabled": false,
@@ -82,15 +81,16 @@ affects (for example `"min_dist"` with `"is_missing_info":true` will
 reject ALL events if the server setting `location` is not set)
 
 An example filters section looks like this:
+
 ```json
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 90.0, "max_iv": 100
+        "min_iv": 90, "max_iv": 100
     },
     "filter_name_2": {
         "monsters": [ 4, 5, 6 ],
-        "min_iv": 90.0, "max_iv": 100
+        "min_iv": 90, "max_iv": 100
     }
 }
 ```
@@ -108,8 +108,9 @@ You can use the `"defaults"` section to easily apply default values to
 all of the filters in that section.
 
 For example, the following section:
+
 ```json
-"defaults": { "min_iv": 90.0, "max_iv": 100 },
+"defaults": { "min_iv": 90, "max_iv": 100 },
 "filters": {
     "filter_name_1": { "monsters": [ 1, 2, 3 ] },
     "filter_name_2": { "monsters": [ 4, 5, 6 ] }
@@ -117,15 +118,16 @@ For example, the following section:
 ```
 
 Which is equivalent to:
+
 ```json
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 90.0, "max_iv": 100
+        "min_iv": 90, "max_iv": 100
     },
     "filter_name_2": {
         "monsters": [ 4, 5, 6 ],
-        "min_iv": 90.0, "max_iv": 100
+        "min_iv": 90, "max_iv": 100
     }
 }
 ```
@@ -133,12 +135,13 @@ Which is equivalent to:
 Additionally, you can override or even disable defaults. Override them
 by adding a new value, or disable them by using `null`. An example of
 this is:
+
 ```json
-"defaults": { "min_iv": 90.0, "max_iv": 100 },
+"defaults": { "min_iv": 90, "max_iv": 100 },
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 85.0
+        "min_iv": 85
     },
     "filter_name_2": {
         "monsters": [ 4, 5, 6 ],
@@ -148,11 +151,12 @@ this is:
 ```
 
 Which is equivalent to:
+
 ```json
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 85.0, "max_iv": 1000.0
+        "min_iv": 85, "max_iv": 100
     },
     "filter_name_2": { "monsters": [ 4, 5, 6 ] }
 }
@@ -184,7 +188,7 @@ are unknown, it will be rejected.
 When `"is_missing_info"` is NOT included in the filter, it will simply
 skip any checks on missing information. If you have `"min_iv":90` set
 but no `"is_missing_info`", PA will still pass monsters
-where 'iv` is unknown.
+where `iv` is unknown.
 
 
 ### Geofence
@@ -196,9 +200,10 @@ You can require an Event to be inside specific geofences for a Filter.
 
 This example will check if an event is inside either `"fence1"` or
 `"fence2"` as defined in:
+
 ```json
 "filter_name_1": {
-    "geofence": [ "fence1", "fence2" ]
+    "geofences": [ "fence1", "fence2" ]
 }
 ```
 
@@ -211,6 +216,15 @@ If no geofences are set, the `<geofence>` DTS will always return
 If a geofence with the set name does not exist, it will be skipped and
 an error will print out to the console.
 
+Another example would be to configure alerts inside all of your geofences.
+You just have to configure the geofences like this:
+
+```json
+"filter_name_1": {
+    "geofences": [ "all" ]
+}
+```
+
 ### Custom DTS
 
 **Note:** See the [Dynamic Text Substitution](Dynamic-Text-Substitution)
@@ -221,6 +235,7 @@ an Event when it passes a filter. The `"custom_dts"` parameter can
 contain key-value pairs of DTS that ONLY apply for that filter.
 
 For example:
+
 ```json
 "filters": {
     "filter_name_1": {

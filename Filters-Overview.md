@@ -86,11 +86,11 @@ An example filters section looks like this:
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 90, "max_iv": 100
+        "min_iv": 90.0, "max_iv": 100
     },
     "filter_name_2": {
         "monsters": [ 4, 5, 6 ],
-        "min_iv": 90, "max_iv": 100
+        "min_iv": 90.0, "max_iv": 100
     }
 }
 ```
@@ -110,7 +110,7 @@ all of the filters in that section.
 For example, the following section:
 
 ```json
-"defaults": { "min_iv": 90, "max_iv": 100 },
+"defaults": { "min_iv": 90.0, "max_iv": 100 },
 "filters": {
     "filter_name_1": { "monsters": [ 1, 2, 3 ] },
     "filter_name_2": { "monsters": [ 4, 5, 6 ] }
@@ -123,11 +123,11 @@ Which is equivalent to:
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
-        "min_iv": 90, "max_iv": 100
+        "min_iv": 90.0, "max_iv": 100
     },
     "filter_name_2": {
         "monsters": [ 4, 5, 6 ],
-        "min_iv": 90, "max_iv": 100
+        "min_iv": 90.0, "max_iv": 100
     }
 }
 ```
@@ -137,7 +137,7 @@ by adding a new value, or disable them by using `null`. An example of
 this is:
 
 ```json
-"defaults": { "min_iv": 90, "max_iv": 100 },
+"defaults": { "min_iv": 90.0, "max_iv": 100 },
 "filters": {
     "filter_name_1": {
         "monsters": [ 1, 2, 3 ],
@@ -186,7 +186,7 @@ Events that ARE MISSING INFOrmation. If `"max_iv"` is set and the ivs
 are unknown, it will be rejected.
 
 When `"is_missing_info"` is NOT included in the filter, it will simply
-skip any checks on missing information. If you have `"min_iv":90` set
+skip any checks on missing information. If you have `"min_iv":90.0` set
 but no `"is_missing_info`", PA will still pass monsters
 where `iv` is unknown.
 

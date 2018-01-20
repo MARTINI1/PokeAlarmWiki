@@ -33,7 +33,7 @@ This page assumes:
 | weather_id       | Weather ID of the raid.                                 |
 | weather          | Weather name of the raid.                               |
 | weather_or_empty | Weather name of the raid, or empty string if unknown.   |
-| weather_emoji    | Weather emoji of the raid.                              |
+| weather_emoji    | Weather emoji of the raid, or empty string if unknown.  |
 | mon_name         | The name of the monster's species.                      |
 | mon_id           | ID of the monster's species.                            |
 | mon_id_3         | ID of the monster's species, padded to 3 digits.        |

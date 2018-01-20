@@ -38,7 +38,7 @@ This page assumes:
 | weather_id       | Weather ID of the monster.                                |
 | weather          | Weather name of the monster.                              |
 | weather_or_empty | Weather name of the monster, or empty string if unknown.  |
-| weather_emoji    | Weather emoji of the monster.                             |
+| weather_emoji    | Weather emoji of the monster, or empty string if unknown. |
 | mon_lvl          | Level of the monster.                                     |
 | cp               | Combat Points of the monster.                             |
 | iv               | Individual Values percentage of the monster.              |              

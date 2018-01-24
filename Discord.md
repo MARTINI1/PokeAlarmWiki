@@ -104,50 +104,50 @@ These optional parameters below are applicable to the `monsters`, `stops`,
   "discord_alarm":{
     "active":true,
     "type": "discord",
-	  "webhook_url":"YOUR_WEBHOOK_URL",
-	  "startup_message":"False",
-	  "monsters":{
-	  	  "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
-		    "username":"<mon_name>",
-		    "icon_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_<form_id_3>.png",
-		    "title":"A wild <mon_name> has appeared!",
-		    "url":"<gmaps>",
-		    "body":"Available until <24h_time> (<time_left>)."
-	  },
-	  "stops":{
-			  "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
-			  "username":"Pokestop",
-			  "icon_url*":"<YOUR CUSTOM URL HERE>/ready.png",
-			  "title":"Someone has placed a lure on a Pokestop!",
-			  "url":"<gmaps>",
-			  "body":"Lure will expire at <24h_time> (<time_left>)."
-	  },
-	  "gyms":{
-			  "webhook_url":"YOUR_WEBHOOK_URL_FOR_GYM_CHANNEL",
-			  "username":"<new_team> Gym Alerts",
-			  "icon_url*":"<YOUR CUSTOM URL HERE>/<new_team_id>.png",
-			  "title":"A Team <old_team> gym has fallen!",
-			  "url":"<gmaps>",
-			  "body":"It is now controlled by <new_team>."
-	  },
-	  "eggs":{
-	  	  "webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
-	  	  "username":"Egg",
-			  "icon_url*":"<YOUR CUSTOM URL HERE>/<egg_lvl>.png",
-			  "avatar_url*":"<YOUR CUSTOM URL HERE>/<egg_lvl>.png",
-			  "title":"Raid is incoming!",
-			  "url":"<gmaps>",
-			  "body":"A level <egg_lvl> raid will hatch at <24h_hatch_time> (<hatch_time_left>)."
-	  },
-	  "raids":{
-			  "webhook_url":"DISCORD_WEBHOOK_URL_FOR_RAID_CHANNEL",
-			  "username":"Raid",
-			  "icon_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_000.png",
-			  "avatar_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_000.png",
-			  "title":"Level <raid_lvl> Raid is available against <mon_name>!",
-			  "url":"<gmaps>",
-			  "body":"The raid is available until <24h_raid_end> (<raid_time_left>)."
-	  }
+    "webhook_url":"YOUR_WEBHOOK_URL",
+    "startup_message":"False",
+    "monsters":{
+        "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
+        "username":"<mon_name>",
+        "icon_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_<form_id_3>.png",
+        "title":"A wild <mon_name> has appeared!",
+        "url":"<gmaps>",
+        "body":"Available until <24h_time> (<time_left>)."
+    },
+    "stops":{
+        "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKESTOP_CHANNEL",
+        "username":"Pokestop",
+        "icon_url*":"<YOUR CUSTOM URL HERE>/ready.png",
+        "title":"Someone has placed a lure on a Pokestop!",
+        "url":"<gmaps>",
+        "body":"Lure will expire at <24h_time> (<time_left>)."
+    },
+    "gyms":{
+        "webhook_url":"YOUR_WEBHOOK_URL_FOR_GYM_CHANNEL",
+        "username":"<new_team> Gym Alerts",
+        "icon_url*":"<YOUR CUSTOM URL HERE>/<new_team_id>.png",
+        "title":"A Team <old_team> gym has fallen!",
+        "url":"<gmaps>",
+        "body":"It is now controlled by <new_team>."
+    },
+    "eggs":{
+        "webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
+        "username":"Egg",
+        "icon_url*":"<YOUR CUSTOM URL HERE>/<egg_lvl>.png",
+        "avatar_url*":"<YOUR CUSTOM URL HERE>/<egg_lvl>.png",
+        "title":"Raid is incoming!",
+        "url":"<gmaps>",
+        "body":"A level <egg_lvl> raid will hatch at <24h_hatch_time> (<hatch_time_left>)."
+    },
+    "raids":{
+        "webhook_url":"DISCORD_WEBHOOK_URL_FOR_RAID_CHANNEL",
+        "username":"Raid",
+        "icon_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_000.png",
+        "avatar_url*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_000.png",
+        "title":"Level <raid_lvl> Raid is available against <mon_name>!",
+        "url":"<gmaps>",
+        "body":"The raid is available until <24h_raid_end> (<raid_time_left>)."
+    }
   }
 }
 ```
@@ -183,13 +183,13 @@ Below is an example of enabling the mini map for pokemon.
 	},
 ```
 
-| Parameters     | Description                                       | Default                                       |
-|----------------|---------------------------------------------------|-----------------------------------------------|
-| `enabled`      | Turns the map on or off                           | `True`                                        |
-| `width`        | Width of the map                                  | `250` px                                      |
-| `height`       | Height of the map                                 | `150` px                                      |
-| `maptype`      | Link to be added to notification text             | `roadmap`                                     |
-| `zoom`         | Specifies the zoom of the map                     | `15`                                          |
+| Parameters     | Description                           | Default     |
+|----------------|---------------------------------------|-------------|
+| `enabled`      | Turns the map on or off               | `True`      |
+| `width`        | Width of the map                      | `250` px    |
+| `height`       | Height of the map                     | `150` px    |
+| `maptype`      | Link to be added to notification text | `roadmap`   |
+| `zoom`         | Specifies the zoom of the map         | `15`        |
 
 ### Formatting alarms text
 

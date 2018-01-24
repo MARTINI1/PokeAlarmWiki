@@ -198,8 +198,8 @@ coordinates.
   }
 }
 ```
-**Note1:** *THESE LINES ARE USED TO OVERRIDE DEFAULT VALUES. IF YOU DO NOT WISH
-TO USE CUSTOM IMAGES, DO NOT ADD THESE LINES TO YOUR ALARMS.JSON.*
+**Note1:** \*THESE LINES ARE USED TO OVERRIDE DEFAULT VALUES. IF YOU DO NOT WISH
+TO USE CUSTOM IMAGES, DO NOT ADD THESE LINES TO YOUR ALARMS.JSON.
 
 **Note2:** The above code is to be inserted into the alarms section of
 alarms.json. It does not represent the entire alarms.json file.

@@ -80,7 +80,7 @@ Parameters at the alarm level will be the default to alert-level parameters.
 |-------------------|------------------------------------------------------|-----------------------|
 | `map`             | Sends minimap after main message.                    | `True`                |
 | `map_notify`      | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
-| `venue`           | Sends location in main message.                      | `False`               |
+| `venue`           | Sends location in main message.*                     | `False`               |
 | `venue_notify`    | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
 | `message_notify`  | Enables notifications messages                       | `True`                |
 | `sticker`         | Sends pokemon images as stickers in the message      | `True`                |
@@ -98,10 +98,13 @@ override the alarm-level settings for this alert.
 | `message`        | Text for the message                     | `*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).`            |
 | `map`            | Sends minimap after main message.               | `True`                                    |
 | `map_notify`     | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
-| `venue`          | Sends location in main message.                 | `False`                                   |
+| `venue`          | Sends location in main message.*                | `False`                                   |
 | `venue_notify`   | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
 | `sticker`        | Sends pokemon images as stickers in the message | `True`                                    |
 | `sticker_notify` | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+
+**Note:** \*if you use `venue`, keep in mind that the markdown in your alarms
+will be ignored because of a limitation in the Telegram API.
 
 ### Example: Alarm Configuration Using Optional Parameters
 

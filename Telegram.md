@@ -78,16 +78,16 @@ Parameters at the alarm level will be the default to alert-level parameters.
 
 | Parameters        | Description                                          | Default               |
 |-------------------|------------------------------------------------------|-----------------------|
-| `map`             | Sends minimap after main message.                    | `True`                |
+| `map`             | Sends minimap after main message.                    | `true`                |
 | `map_notify`      | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
-| `venue`           | Sends location in main message.*                     | `False`               |
+| `venue`           | Sends location in main message.*                     | `false`               |
 | `venue_notify`    | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
-| `message_notify`  | Enables notifications messages                       | `True`                |
-| `sticker`         | Sends pokemon images as stickers in the message      | `True`                |
+| `message_notify`  | Enables notifications messages                       | `true`                |
+| `sticker`         | Sends pokemon images as stickers in the message      | `true`                |
 | `sticker_notify`  | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
 | `sticker_url`     | Url to be used for the sticker. Must be .webp file.  |                       |
 | `max_attempts`    | Max attempts to send for each message.               | 3                     |
-| `startup_message` | Confirmation post when PokeAlarm initialized         | `True`                |
+| `startup_message` | Confirmation post when PokeAlarm initialized         | `true`                |
 
 These optional parameters below are applicable to the `monsters`, `stops`,
 `gyms`, `eggs`, and `raids` sections of the JSON file. These parameters
@@ -96,11 +96,11 @@ override the alarm-level settings for this alert.
 | Parameters       | Description                                     | Default                                   |
 |------------------|-------------------------------------------------|-------------------------------------------|
 | `message`        | Text for the message                     | `*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).`            |
-| `map`            | Sends minimap after main message.               | `True`                                    |
+| `map`            | Sends minimap after main message.               | `true`                                    |
 | `map_notify`     | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
-| `venue`          | Sends location in main message.*                | `False`                                   |
+| `venue`          | Sends location in main message.*                | `false`                                   |
 | `venue_notify`   | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
-| `sticker`        | Sends pokemon images as stickers in the message | `True`                                    |
+| `sticker`        | Sends images as stickers in the message         | `true`                                    |
 | `sticker_notify` | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
 
 **Note:** \*if you use `venue`, keep in mind that the markdown in your alarms
@@ -116,35 +116,36 @@ pertaining to the alarm portion of the JSON file.
 {
   "telegram_alarm":{
     "active":true,
+    "type":"telegram",
     "bot_token":"YOUR_BOT_TOKEN",
     "chat_id":"YOUR_CHAT_ID",
-    "map_notify":"False",
-    "startup_message":"False",
-    "sticker":"True",
+    "map_notify":false,
+    "startup_message":false,
+    "sticker":true,
     "monsters":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
         "message":"*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).",
-        "map":"True"
+        "map":true
     },
     "stops":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
         "message":"*Someone has placed a lure on a Pokestop!*\nLure will expire at <24h_time> (<time_left>).",
-        "map":"True"
+        "map":true
     },
     "gyms":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
         "message":"*A Team <old_team> gym has fallen!*\nIt is now controlled by <new_team>.",
-        "map":"True"
+        "map":true
     },
     "eggs":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
         "message":"*A level <egg_lvl> raid is incoming!*\nThe egg will hatch <24h_hatch_time> (<hatch_time_left>).",
-        "map":"True"
+        "map":true
     },
     "raids":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
         "message":"*A raid is available against <mon_name>!*\nThe raid is available until <24h_raid_end> (<raid_time_left>).",
-        "map":"True"
+        "map":true
     }
   }
 }

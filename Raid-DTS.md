@@ -43,6 +43,7 @@ This page assumes:
 | weather_emoji    | Weather emoji of the raid, or empty string if unknown.  |
 | boosted_weather_id | Return weather ID if monster is boosted.              |
 | boosted_weather  | Return weather name if monster is boosted.              |
+| boosted_weather_or_empty | Return weather name if monster is boosted, or empty string if unknown. |
 | boosted_weather_emoji | Return weather emoji if monster is boosted, or empty string if unknown. |
 | boosted_or_empty | Return `boosted` if monster is boosted, or empty string if not. |
 | mon_name         | The name of the monster's species.                      |

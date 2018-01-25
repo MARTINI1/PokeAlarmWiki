@@ -131,23 +131,23 @@ into a functional alarm layout.
     "monsters":{
         "from_number":"YOUR_FROM_NUM",
         "to_number":"YOUR_TO_NUM",
-        "message": "A wild <mon_name> has appeared! <gmaps> Available until <24h_time> (<time_left>)."
+        "message":"A wild <mon_name> has appeared! <gmaps> Available until <24h_time> (<time_left>)."
     },
     "stops":{
         "from_number":"YOUR_FROM_NUM",
         "to_number":"YOUR_TO_NUM",
-        "message": "Someone has placed a lure on a Pokestop! <gmaps> Lure will expire at <24h_time> (<time_left>)."
+        "message":"Someone has placed a lure on a Pokestop! <gmaps> Lure will expire at <24h_time> (<time_left>)."
     },
     "gyms":{
         "from_number":"YOUR_FROM_NUM",
         "to_number":"YOUR_TO_NUM",
-        "message": "A Team <old_team> gym has fallen! <gmaps> It is now controlled by <new_team>."
+        "message":"A Team <old_team> gym has fallen! <gmaps> It is now controlled by <new_team>."
     },
-    "eggs": {
-        "message": "A level <egg_lvl> raid is incoming! <gmaps> Egg hatches <24h_hatch_time> (<hatch_time_left>)."
+    "eggs":{
+        "message":"A level <egg_lvl> raid is incoming! <gmaps> Egg hatches <24h_hatch_time> (<hatch_time_left>)."
     },
-    "raids": {
-       "message": "Level <raid_lvl> raid against <mon_name>! <gmaps> Available until <24h_raid_end> (<raid_time_left>)."
+    "raids":{
+       "message":"Level <raid_lvl> raid against <mon_name>! <gmaps> Available until <24h_raid_end> (<raid_time_left>)."
     }
   }
 }

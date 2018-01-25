@@ -37,8 +37,8 @@ These `alarm.json` parameters are required to enable the Pushbullet alarm servic
 
 | Parameters     | Description                            |
 |:-------------- |:---------------------------------------|
-|`type`          | must be `pushbullet`                   |
-|`active`        |`true` for alarm to be active           |
+|`type`          | Must be `pushbullet`                   |
+|`active`        | `true` for alarm to be active          |
 |`api_key`       | Your Pushbullet API key                |
 
 ### Example: Basic Alarm Configuration using Required Parameters
@@ -59,7 +59,7 @@ alarms.json. It does not represent the entire alarms.json file.
 
 ### Optional Parameters
 
-In addition to the required parameters, several `alarm.json` optional
+In addition to the required parameters, several `alarms.json` optional
 parameters are available to personalize your notifications. Below is an
 example of these optional parameters and how they are incorporated into a
 functional alarm layout.
@@ -68,7 +68,7 @@ These optional parameters are entered at the same level as `"type":"pushbullet"`
 
 | Parameters         | Description                                    | Default  |
 |:-------------------|:-----------------------------------------------|:---------|
-| `startup_message`  | Confirmation post when PokeAlarm initialized   | `True`   |
+| `startup_message`  | Confirmation post when PokeAlarm initialized   | `true`   |
 
 These optional parameters below are applicable to the `monsters`, `stops`,
 `gyms`, `eggs`, and `raids` sections of the JSON file.
@@ -108,15 +108,15 @@ These optional parameters below are applicable to the `monsters`, `stops`,
         "channel":"OVERRIDES_DEFAULT_CHANNEL"
     },
     "eggs": {
-        "title": "A level <egg_lvl> raid is incoming!",
-        "url": "<gmaps>",
-        "body": "The egg will hatch <24h_hatch_time> (<hatch_time_left>).",
+        "title":"A level <egg_lvl> raid is incoming!",
+        "url":"<gmaps>",
+        "body":"The egg will hatch <24h_hatch_time> (<hatch_time_left>).",
         "channel":"OVERRIDES_DEFAULT_CHANNEL"
     },
-    "raids": {
-        "title": "Level <raid_lvl> raid is available against <mon_name>!",
-        "url": "<gmaps>",
-        "body": "The raid is available until <24h_raid_end> (<raid_time_left>)."
+    "raids":{
+        "title":"Level <raid_lvl> raid is available against <mon_name>!",
+        "url":"<gmaps>",
+        "body":"The raid is available until <24h_raid_end> (<raid_time_left>)."
     }
   }
 }

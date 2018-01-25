@@ -70,7 +70,7 @@ These optional parameters are entered at the same level as `"type":"facebook_pag
 
 | Parameters         | Description                                     | Default  |
 |--------------------|-------------------------------------------------|----------|
-| `startup_message`  | Confirmation post when PokeAlarm initialized    | `True`   |
+| `startup_message`  | Confirmation post when PokeAlarm initialized    | `true`   |
 
 These optional parameters below are applicable to the `monsters`, `stops`,
 `gyms`, `eggs`, and `raids` sections of the JSON file. Check Image column to
@@ -159,7 +159,7 @@ coordinates.
     "active":true,
     "type":"facebook_page",
     "page_access_token":"YOUR_PAGE_ACCESS_TOKEN",
-    "startup_message":"True",
+    "startup_message":false,
     "monsters":{
         "message":"<mon_name> available. <quick_move>/<charge_move> (<iv>% - <atk>/<def>/<sta>)",
         "image*":"<YOUR CUSTOM URL HERE>/<mon_id_3>_<form_id_3>.png",

@@ -127,7 +127,7 @@ the Alert has been updated:
       "channel":"Pokemon",
 		  "username":"<mon_name>",
 		  "title":"A GIANT <mon_name> jumped out of the grass!",
-		  "body": "Available until <24h_time> (<time_left>)."
+		  "body":"Available until <24h_time> (<time_left>)."
     },
     "stops":{
 		  "channel":"Pokestop",
@@ -154,7 +154,7 @@ Below is a working alarm configuration for Discord and Slack:
         "active":true,
         "type":"discord",
         "webhook_url":"DISCORD_WEBHOOK_URL_FOR_FALLBACK",
-        "startup_message":"False",
+        "startup_message":false,
         "monsters":{
             "webhook_url":"DISCORD_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
             "username":"<mon_name>",
@@ -176,7 +176,7 @@ Below is a working alarm configuration for Discord and Slack:
             "url":"<gmaps>",
             "body":"A team <old_team> gym has fallen to <new_team>."
         },
-        "eggs": {
+        "eggs":{
             "webhook_url":"DISCORD_WEBHOOK_URL_FOR_EGG_CHANNEL",
             "username":"Egg",
             "title":"Raid is incoming!",
@@ -195,43 +195,43 @@ Below is a working alarm configuration for Discord and Slack:
         "active":true,
         "type":"slack",
         "api_key":"YOUR_SLACK_API_KEY",
-        "startup_message":"False",
-        "monsters": {
+        "startup_message":false,
+        "monsters":{
             "channel":"pokemon",
             "username":"<mon_name>",
             "title":"*<mon_name>* (<iv>% <atk>/<def>/<sta>) in <neighborhood> at <address> <postal>",
             "url":"<gmaps>",
             "body":"Available until <24h_time> (<time_left>)\n*Moves:* <quick_move> / <charge_move>",
             "map":{
-                "enabled":"True",
+                "enabled":true,
                 "width":"330",
                 "height":"250",
                 "maptype":"roadmap",
                 "zoom":"17"
             }
         },
-        "stops": {
+        "stops":{
             "channel":"pokestops",
             "username":"Pokestop",
             "title":"[<neighborhood>] <address> <postal>",
             "url":"<gmaps>",
             "body":"expires at <24h_time> (<time_left>).",
             "map":{
-                "enabled":"False",
+                "enabled":false,
                 "width":"330",
                 "height":"250",
                 "maptype":"roadmap",
                 "zoom":"15"
             }
         },
-        "gyms": {
+        "gyms":{
             "channel":"gyms",
             "username":"<new_team> Gym Alerts",
             "title":"[<neighborhood>] <address> <postal>",
             "url":"<gmaps>",
             "body":"A team <old_team> gym has fallen to <new_team>.",
             "map":{
-                "enabled":"True",
+                "enabled":true,
                 "width":"330",
                 "height":"250",
                 "maptype":"terrain",

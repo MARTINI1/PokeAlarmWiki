@@ -79,13 +79,13 @@ These optional parameters are entered at the same level as `"type":"discord"`.
 These optional parameters below are applicable to the `monsters`, `stops`,
 `gyms`, `eggs`, and `raids` sections of the JSON file.
 
-| Parameters       | Description                                   | Default                           |
-|------------------|-----------------------------------------------|-----------------------------------|
-| `webhook_url`    | URL of specific channel name.  Overrides `webhook_url` at Alarm level.  Use to post only
+| Parameters       | Description                                  | Default                           |
+|------------------|----------------------------------------------|-----------------------------------|
+| `webhook_url`    | URL of specific channel name. Overrides `webhook_url` at Alarm level. Use to post only
 | `disable_embed`  | Disables the body to make one line notifications | `False`                       |
 | `username`       | Username the bot should post the message as  | `<mon_name>`                      |
-| `icon_url`       | URL path to pokemon icon                     |                                   |
-| `avatar_url`     | URL path to pokemon avatar                   |                                   |
+| `icon_url`       | URL path to icon                             |                                   |
+| `avatar_url`     | URL path to avatar                           |                                   |
 | `title`          | Notification text to begin the message       | `A wild <mon_name> has appeared!` |
 | `url`            | Link to be added to notification text        | `<gmaps>`                         |
 | `body`           | Additional text to be added to the message   | `Available until <24h_time> (<time_left>).` |
@@ -103,9 +103,9 @@ These optional parameters below are applicable to the `monsters`, `stops`,
 {
   "discord_alarm":{
     "active":true,
-    "type": "discord",
+    "type":"discord",
     "webhook_url":"YOUR_WEBHOOK_URL",
-    "startup_message":"False",
+    "startup_message":false,
     "monsters":{
         "webhook_url":"YOUR_WEBHOOK_URL_FOR_POKEMON_CHANNEL",
         "username":"<mon_name>",
@@ -185,7 +185,7 @@ Below is an example of enabling the mini map for pokemon.
 
 | Parameters     | Description                           | Default     |
 |----------------|---------------------------------------|-------------|
-| `enabled`      | Turns the map on or off               | `True`      |
+| `enabled`      | Turns the map on or off               | `true`      |
 | `width`        | Width of the map                      | `250` px    |
 | `height`       | Height of the map                     | `150` px    |
 | `maptype`      | Link to be added to notification text | `roadmap`   |

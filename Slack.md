@@ -108,7 +108,7 @@ These optional parameters below are applicable to the `monsters`, `stops`,
     "type":"slack",
     "api_key":"YOUR_API_KEY",
     "channel":"general",
-    "startup_message":"True",
+    "startup_message":true,
     "monsters":{
         "channel":"general",
         "username":"<mon_name>",
@@ -117,7 +117,7 @@ These optional parameters below are applicable to the `monsters`, `stops`,
         "url":"<gmaps>",
         "body":"Available until <24h_time> (<time_left>).",
         "map":{
-            "enabled":"true",
+            "enabled":true,
             "width":"250",
             "height":"125",
             "maptype":"roadmap",
@@ -183,7 +183,7 @@ Below is an example of enabling the mini map for pokemon.
 		"url":"<gmaps>",
 		"body":"Available until <24h_time> (<time_left>).",
 		"map":{
-			"enabled":"true",
+			"enabled":true,
 			"width":"250",
 			"height":"125",
 			"maptype":"roadmap",
@@ -194,7 +194,7 @@ Below is an example of enabling the mini map for pokemon.
 
 | Parameters     | Description                               | Default        |
 |----------------|-------------------------------------------|----------------|
-| `enabled`      | Turns the map on or off                   | `True`         |
+| `enabled`      | Turns the map on or off                   | `true`         |
 | `width`        | Width of the map                          | `250` px       |
 | `height`       | Height of the map                         | `150` px       |
 | `maptype`      | Link to be added to notification text     | `roadmap`      |

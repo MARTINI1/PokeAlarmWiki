@@ -35,12 +35,12 @@ PokeAlarm offers the following for Twitter:
 
 ### Required Parameters
 
-These `alarm.json` parameters are required to enable the Twitter alarm service:
+These `alarms.json` parameters are required to enable the Twitter alarm service:
 
 | Parameters       | Description                            |
 |:-----------------|:---------------------------------------|
-| `type`           | must be `twitter`                      |
-| `active`         |`true` for alarm to be active           |
+| `type`           | Must be `twitter`                      |
+| `active`         | `true` for alarm to be active          |
 | `access_token`   | Your twitter access token              |
 | `access_secret`  | Your twitter access secret             |
 | `consumer_key`   | Your twitter consumer key              |
@@ -51,11 +51,11 @@ These `alarm.json` parameters are required to enable the Twitter alarm service:
 ```json
 {
 	"active":true,
-	"type": "twitter",
-	"access_token": "YOUR_ACCESS_TOKEN",
-	"access_secret": "YOUR_ACCESS_SECRET",
-	"consumer_key": "YOUR_CONSUMER_KEY",
-	"consumer_secret": "YOUR_CONSUMER_SECRET"
+	"type":"twitter",
+	"access_token":"YOUR_ACCESS_TOKEN",
+	"access_secret":"YOUR_ACCESS_SECRET",
+	"consumer_key":"YOUR_CONSUMER_KEY",
+	"consumer_secret":"YOUR_CONSUMER_SECRET"
 }
 ```
 **Note:** The above code is to be inserted into the alarms section of
@@ -65,7 +65,7 @@ These `alarm.json` parameters are required to enable the Twitter alarm service:
 
 ### Optional Parameters
 
-In addition to the required parameters, several `alarm.json` optional
+In addition to the required parameters, several `alarms.json` optional
 parameters are available to personalize your notifications. Below is an
 example of these optional parameters and how they are incorporated into a
 functional alarm layout.
@@ -74,7 +74,7 @@ These optional parameters are entered at the same level as `"type":"twitter"`.
 
 | Parameters         | Description                                        | Default                      |
 |:-------------------|:---------------------------------------------------|:-----------------------------|
-| `startup_message`  | Confirmation post when PokeAlarm initialized       | `True`                       |
+| `startup_message`  | Confirmation post when PokeAlarm initialized       | `true`                       |
 
 These optional parameters below are applicable to the `monsters`, `stops`,
 `gyms`, `eggs`, and `raids` sections of the JSON file.
@@ -89,25 +89,25 @@ These optional parameters below are applicable to the `monsters`, `stops`,
 {
   "twitter_alarm":{
     "active":true,
-    "type": "twitter",
-    "access_token": "YOUR_ACCESS_TOKEN",
-    "access_secret": "YOUR_ACCESS_SECRET",
-    "consumer_key": "YOUR_CONSUMER_KEY",
-    "consumer_secret": "YOUR_CONSUMER_SECRET",
+    "type":"twitter",
+    "access_token":"YOUR_ACCESS_TOKEN",
+    "access_secret":"YOUR_ACCESS_SECRET",
+    "consumer_key":"YOUR_CONSUMER_KEY",
+    "consumer_secret":"YOUR_CONSUMER_SECRET",
     "monsters":{
-        "status": "A wild <mon_name> has appeared! Available until <24h_time> (<time_left>). <gmaps>"
+        "status":"A wild <mon_name> has appeared! Available until <24h_time> (<time_left>). <gmaps>"
     },
     "stops":{
-        "status": "Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>). <gmaps>"
+        "status":"Someone has placed a lure on a Pokestop! Lure will expire at <24h_time> (<time_left>). <gmaps>"
     },
     "gyms":{
         "status":"A Team <old_team> gym has fallen! It is now controlled by <new_team>. <gmaps>"
     },
-    "eggs": {
-        "status": "Level <egg_lvl> raid incoming! Hatches at <24h_hatch_time> (<hatch_time_left>). <gmaps>"
+    "eggs":{
+        "status":"Level <egg_lvl> raid incoming! Hatches at <24h_hatch_time> (<hatch_time_left>). <gmaps>"
     },
-    "raids": {
-        "status": "Raid <raid_lvl> against <mon_name>! Available until <24h_raid_end> (<raid_time_left>). <gmaps>"
+    "raids":{
+        "status":"Raid <raid_lvl> against <mon_name>! Available until <24h_raid_end> (<raid_time_left>). <gmaps>"
     }
   }
 }

@@ -1,4 +1,5 @@
 ## Overview
+
 * [Prerequisites](#prerequisites)
 * [Introduction](#introduction)
 * [Basic Config](#basic-config)
@@ -12,6 +13,7 @@
 * [How to Create a Custom Channel](#how-to-create-a-custom-channel)
 
 ## Prerequisites
+
 This guide assumes:
 
 1. You are familiar with [JSON formatting](https://www.w3schools.com/js/js_json_intro.asp)
@@ -21,9 +23,13 @@ This guide assumes:
 Please familiarize yourself with all of the above before proceeding.
 
 ## Introduction
+
 ![](images/telegram.png)
 
-**Telegram** is a cloud-based instant messaging service. Telegram clients exist for both mobile (Android, iOS, Windows Phone, Ubuntu Touch) and desktop systems (Windows, OS X, Linux). Users can send messages and exchange photos, videos, stickers and files of any type.
+**Telegram** is a cloud-based instant messaging service. Telegram clients exist
+for both mobile (Android, iOS, Windows Phone, Ubuntu Touch) and desktop systems
+(Windows, OS X, Linux). Users can send messages and exchange photos, videos,
+stickers and files of any type.
 
 PokeAlarm offers the following for Telegram:
 
@@ -40,15 +46,19 @@ These `alarm.json` parameters are required to enable the Telegram alarm service:
 | Parameters     | Description                            |
 |----------------|----------------------------------------|
 | `type`         | Must be `telegram`                     |
-| `active`       | `True` for alarm to be active          |
+| `active`       | `true` for alarm to be active          |
 | `bot_token`    | Your Bot Token from Telegram           |
 | `chat_id`      | Your chat's id from Telegram           |
 
 ### Example: Basic Alarm Configuration using Required Parameters
-Below is how a basic Telegram alarm configuration would appear in `alarms.json`.  Note that this is **not** the entire `alarms.json`, but only the section pertaining to the alarm portion of the JSON file.
+
+Below is how a basic Telegram alarm configuration would appear in
+`alarms.json`.  Note that this is **not** the entire `alarms.json`, but only
+the section pertaining to the alarm portion of the JSON file.
+
 ```json
 {
-	"active":"True",
+	"active":true,
 	"type":"telegram",
 	"bot_token":"YOUR_BOT_TOKEN",
 	"chat_id":"YOUR_CHAT_ID"
@@ -58,70 +68,86 @@ Below is how a basic Telegram alarm configuration would appear in `alarms.json`.
 ## Advanced Config
 
 ### Optional Parameters
-In addition to the required parameters, several `alarm.json` optional parameters are available to personalize your notifications.  Below is an example of these optional parameters and how they are incorporated into a functional alarm layout.
 
+In addition to the required parameters, several `alarms.json` optional
+parameters are available to personalize your notifications. Below is an example
+of these optional parameters and how they are incorporated into a functional
+alarm layout.
 
 Parameters at the alarm level will be the default to alert-level parameters.
 
-| Parameters                 | Description                                                          | Default |
-|----------------------------|----------------------------------------------------------------------|---------|
-| `location`                 | Sends minimap after main message.                                    | `True`  |
-| `disable_map_notification` | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
-| `venue`                    | Sends location in main message.                                      | `False` |
-| `startup_message`          | Confirmation post when PokeAlarm initialized                         | `True`  |
+| Parameters        | Description                                          | Default               |
+|-------------------|------------------------------------------------------|-----------------------|
+| `map`             | Sends minimap after main message.                    | `true`                |
+| `map_notify`      | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `venue`           | Sends location in main message.*                     | `false`               |
+| `venue_notify`    | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
+| `message_notify`  | Enables notifications messages                       | `true`                |
+| `sticker`         | Sends pokemon images as stickers in the message      | `true`                |
+| `sticker_notify`  | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `sticker_url`     | Url to be used for the sticker. Must be .webp file.  |                       |
+| `max_attempts`    | Max attempts to send for each message.               | 3                     |
+| `startup_message` | Confirmation post when PokeAlarm initialized         | `true`                |
 
-These optional parameters below are applicable to the `pokemon`, `pokestop`, `gym`, `egg`, and `raid` sections of the JSON file. These parameters override the alarm-level settings for this alert.
+These optional parameters below are applicable to the `monsters`, `stops`,
+`gyms`, `eggs`, and `raids` sections of the JSON file. These parameters
+override the alarm-level settings for this alert.
 
-| Parameters | Description                                  | Default                                                  |
-|------------|----------------------------------------------|----------------------------------------------------------|
-| `title`    | Header text for the message                  | `A wild <mon_name> has appeared!`                        |
-| `body`     | Additional text to be added to the message		| `"<gmaps> \n Available until <24h_time> (<time_left>)."` |
-| `location` | Sends minimap after main message.            | `True`                                                   |
-| `disable_map_notification` | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
-| `venue`    | Sends location in main message.              | `False`                                                  |
-| `stickers` | Sends pokemon images as stickers in the message | `True`                                                |
+| Parameters       | Description                                     | Default                                   |
+|------------------|-------------------------------------------------|-------------------------------------------|
+| `message`        | Text for the message                     | `*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).`            |
+| `map`            | Sends minimap after main message.               | `true`                                    |
+| `map_notify`     | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `venue`          | Sends location in main message.*                | `false`                                   |
+| `venue_notify`   | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
+| `sticker`        | Sends images as stickers in the message         | `true`                                    |
+| `sticker_notify` | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+
+**Note:** \*if you use `venue`, keep in mind that the markdown in your alarms
+will be ignored because of a limitation in the Telegram API.
 
 ### Example: Alarm Configuration Using Optional Parameters
-Below is how an advanced alarm configuration would appear in `alarms.json`. Note that this is **not** the entire `alarms.json`, but only the section pertaining to the alarm portion of the JSON file.
+
+Below is how an advanced alarm configuration would appear in `alarms.json`.
+Note that this is **not** the entire `alarms.json`, but only the section
+pertaining to the alarm portion of the JSON file.
+
 ```json
 {
-    "active":"True",
+  "telegram_alarm":{
+    "active":true,
     "type":"telegram",
     "bot_token":"YOUR_BOT_TOKEN",
     "chat_id":"YOUR_CHAT_ID",
-    "disable_map_notification":"False",
-    "startup_message":"True",
-    "stickers":"True",
-    "pokemon":{
+    "map_notify":false,
+    "startup_message":false,
+    "sticker":true,
+    "monsters":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
-        "title":"A wild <mon_name> has appeared!",
-        "body":"Available until <24h_time> (<time_left>).",
-        "location":"True"
+        "message":"*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).",
+        "map":true
     },
-    "pokestop":{
+    "stops":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
-        "title":"Someone has placed a lure on a Pokestop!",
-        "body":"Lure will expire at <24h_time> (<time_left>).",
-        "location":"True"
+        "message":"*Someone has placed a lure on a Pokestop!*\nLure will expire at <24h_time> (<time_left>).",
+        "map":true
     },
-    "gym":{
+    "gyms":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
-        "title":"A Team <old_team> gym has fallen!",
-        "body":"It is now controlled by <new_team>.",
-        "location":"True"
+        "message":"*A Team <old_team> gym has fallen!*\nIt is now controlled by <new_team>.",
+        "map":true
     },
-    "egg":{
+    "eggs":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
-        "title":"A level <egg_lvl> raid is incoming!",
-        "body":"The egg will hatch <24h_hatch_time> (<hatch_time_left>).",
-        "location":"True"
+        "message":"*A level <egg_lvl> raid is incoming!*\nThe egg will hatch <24h_hatch_time> (<hatch_time_left>).",
+        "map":true
     },
-    "raid":{
+    "raids":{
         "chat_id":"OVERRIDES_DEFAULT_CHANNEL",
-        "title":"A raid is available against <mon_name>!",
-        "body":"The raid is available until <24h_raid_end> (<raid_time_left>).",
-        "location":"True"
+        "message":"*A raid is available against <mon_name>!*\nThe raid is available until <24h_raid_end> (<raid_time_left>).",
+        "map":true
     }
+  }
 }
 ```
 
@@ -135,18 +161,27 @@ Here is a basic guide to apply custom styles to alarm text:
 | `*bold text*`                      | **bold**                         |
 | `_*bold italics*_`                 | ***bold italics***               |
 
-You can see other options in the official Telegram information about formatting text [here](https://core.telegram.org/bots/api#formatting-options).
+You can see other options in the official Telegram information about
+formatting text [here](https://core.telegram.org/bots/api#formatting-options).
 
 ## How to get a Telegram API Key
 
-1. Go to [Telegram Web Client](https://telegram.org/dl/webogram). Enter your phone number and follow the instructions to create your account.
+1. Go to [Telegram Web Client](https://telegram.org/dl/webogram). Enter your
+phone number and follow the instructions to create your account.
 
-2. Talk to the [BotFather](https://telegram.me/botfather) to create a new bot. Use the `/newbot` command and follow his instructions. It will give you an API Token when you are finished.
+2. Talk to the [BotFather](https://telegram.me/botfather) to create a new bot.
+Use the `/newbot` command and follow his instructions. It will give you an API
+Token when you are finished.
 
-3. Start a conversation with your bot. In the top left click on the menu bars, then click create group. Type in the name of the bot you previously created, then click on it when it appears below. Then click next. Type any message to your bot.
+3. Start a conversation with your bot. In the top left click on the menu bars,
+then click create group. Type in the name of the bot you previously created,
+then click on it when it appears below. Then click next. Type any message to
+your bot.
 
-4. Enter your bot_token in to replace the `<BOT_TOKEN_HERE>` in the following url `https://api.telegram.org/bot<BOT_TOKEN_HERE>/getUpdates`. Then go to it, and find the section that says `"chat":{"id":<CHAT_ID>`. This number is your chat_id.
-
+4. Enter your bot_token in to replace the `<BOT_TOKEN_HERE>` in the following
+url `https://api.telegram.org/bot<BOT_TOKEN_HERE>/getUpdates`. Then go to it,
+and find the section that says `"chat":{"id":<CHAT_ID>`. This number is your
+chat_id.
 
 ## How to Create a Custom Channel
 

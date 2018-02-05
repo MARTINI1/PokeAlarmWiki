@@ -79,12 +79,12 @@ Parameters at the alarm level will be the default to alert-level parameters.
 | Parameters        | Description                                          | Default               |
 |-------------------|------------------------------------------------------|-----------------------|
 | `map`             | Sends minimap after main message.                    | `true`                |
-| `map_notify`      | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `map_notify`      | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `false` |
 | `venue`           | Sends location in main message.*                     | `false`               |
-| `venue_notify`    | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
+| `venue_notify`    | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `true` |
 | `message_notify`  | Enables notifications messages                       | `true`                |
 | `sticker`         | Sends pokemon images as stickers in the message      | `true`                |
-| `sticker_notify`  | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `sticker_notify`  | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `false` |
 | `sticker_url`     | Url to be used for the sticker. Must be .webp file.  |                       |
 | `max_attempts`    | Max attempts to send for each message.               | 3                     |
 | `startup_message` | Confirmation post when PokeAlarm initialized         | `true`                |
@@ -97,11 +97,11 @@ override the alarm-level settings for this alert.
 |------------------|-------------------------------------------------|-------------------------------------------|
 | `message`        | Text for the message                     | `*A wild <mon_name> has appeared!*\nAvailable until <24h_time> (<time_left>).`            |
 | `map`            | Sends minimap after main message.               | `true`                                    |
-| `map_notify`     | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `map_notify`     | Disables map notifications. Set to `False` if you are experiencing notification issues on Android | `false` |
 | `venue`          | Sends location in main message.*                | `false`                                   |
-| `venue_notify`   | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `True` |
+| `venue_notify`   | Disables venue notifications. Set to `False` if you are experiencing notification issues on Android | `true` |
 | `sticker`        | Sends images as stickers in the message         | `true`                                    |
-| `sticker_notify` | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `False` |
+| `sticker_notify` | Disables sticker notifications. Set to `False` if you are experiencing notification issues on Android | `false` |
 
 **Note:** \*if you use `venue`, keep in mind that the markdown in your alarms
 will be ignored because of a limitation in the Telegram API.

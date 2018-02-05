@@ -82,7 +82,7 @@ These optional parameters below are applicable to the `monsters`, `stops`,
 | Parameters       | Description                                  | Default                           |
 |------------------|----------------------------------------------|-----------------------------------|
 | `webhook_url`    | URL of specific channel name. Overrides `webhook_url` at Alarm level. Use to post only
-| `disable_embed`  | Disables the body to make one line notifications | `False`                       |
+| `disable_embed`  | Disables the body to make one line notifications | `false`                       |
 | `username`       | Username the bot should post the message as  | `<mon_name>`                      |
 | `icon_url`       | URL path to icon                             |                                   |
 | `avatar_url`     | URL path to avatar                           |                                   |
@@ -174,7 +174,7 @@ Below is an example of enabling the mini map for pokemon.
 		"url":"<gmaps>",
 		"body":"Available until <24h_time> (<time_left>).",
 		"map":{
-			"enabled":"true",
+			"enabled":true,
 			"width":"250",
 			"height":"125",
 			"maptype":"roadmap",

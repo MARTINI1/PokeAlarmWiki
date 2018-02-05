@@ -125,14 +125,14 @@ the Alert has been updated:
     "api_key":"YOUR_API_KEY_HERE",
     "monsters":{
       "channel":"Pokemon",
-		  "username":"<mon_name>",
-		  "title":"A GIANT <mon_name> jumped out of the grass!",
-		  "body":"Available until <24h_time> (<time_left>)."
+      "username":"<mon_name>",
+      "title":"A GIANT <mon_name> jumped out of the grass!",
+      "body":"Available until <24h_time> (<time_left>)."
     },
     "stops":{
-		  "channel":"Pokestop",
-		  "title":"Someone  has placed a lure on a Pokestop!",
-		  "body":"Better hurry! The lure only has <time_left> remaining!"
+      "channel":"Pokestop",
+      "title":"Someone  has placed a lure on a Pokestop!",
+      "body":"Better hurry! The lure only has <time_left> remaining!"
     }
   }
 }
@@ -217,11 +217,7 @@ Below is a working alarm configuration for Discord and Slack:
             "url":"<gmaps>",
             "body":"expires at <24h_time> (<time_left>).",
             "map":{
-                "enabled":false,
-                "width":"330",
-                "height":"250",
-                "maptype":"roadmap",
-                "zoom":"15"
+                "enabled":false
             }
         },
         "gyms":{
@@ -242,7 +238,7 @@ Below is a working alarm configuration for Discord and Slack:
 }
 ```
 
-Note both have `"active":"true"` set, meaning both alarms are enabled. Setting
+Note both have `"active":true` set, meaning both alarms are enabled. Setting
 either to "false" will disable the specific alarm.. This allows you to have
 alarms set up and ready to go, but only enabled when you want them.
 

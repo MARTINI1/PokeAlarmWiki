@@ -13,8 +13,8 @@
 
 ### **Filters**
 
-[Overview](Filters-Overview)
-[Rules](Rules-Overview)
+[Overview](Filters-Overview)  
+[Rules](Rules-Overview)  
 [Monsters](Monster-Filters)  
 [Stops](Stop-Filters)  
 [Gyms](Gym-Filters)  
